@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Virginia Borja - Portfolio</title>
+
+  <style>
+header {
+      background-color: #ffdce9;
+      color: #ec84ab;
+      text-align: center;
+      padding: 2rem 1rem;
+}
+
+nav {
+  background-color: #ec84ab;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0.5rem 0;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #60a5fa;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+  }
+}
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff3f8;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    p {
+      margin: 0.5rem 0;
+    }
+
+    section {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    section h2 {
+      color: #1f2937;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+
+  /* Education Section Styles */
+    #education {
+      padding: 40px 20px;
+      background: #fff3f8;
+      text-align: center;
+    }
+
+    #education h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .education-card {
+      background: #ffdce9;
+      padding: 25px;
+      max-width: 700px;
+      margin: 0 auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      text-align: left;
+    }
+
+    .education-card h3 {
+      margin-top: 0;
+      font-size: 22px;
+      color: #222;
+    }
+
+    .education-card p {
+      font-size: 16px;
+      color: #555;
+      margin: 8px 0;
+    }
+
+    .education-card strong {
+      color: #333;
+    }
+
+
+    /* Timeline Styles */
+    .timeline {
+      position: relative;
+      margin: 2rem 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: #d1d5db;
+      transform: translateX(-50%);
+    }
+
+    .timeline-entry {
+      position: relative;
+      width: 50%;
+      padding: 1rem 2rem;
+      box-sizing: border-box;
+    }
+
+    .timeline-entry.left {
+      left: 0;
+      text-align: right;
+    }
+
+    .timeline-entry.right {
+      left: 50%;
+      text-align: left;
+    }
+
+    .timeline-content {
+      background: #ffdce9;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      position: relative;
+    }
+
+    .timeline-content h3 {
+      margin-top: 0;
+      font-size: 1.25rem;
+      color: #1f2937;
+    }
+
+    .timeline-entry::after {
+      content: '';
+      position: absolute;
+      top: 1.5rem;
+      width: 20px;
+      height: 20px;
+      background: #ffdce9;
+      border: 3px solid #1f2937;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .timeline-entry.left::after {
+      right: -10px;
+    }
+
+    .timeline-entry.right::after {
+      left: -10px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-entry {
+        width: 100%;
+        padding-left: 3rem;
+        padding-right: 1rem;
+      }
+
+      .timeline-entry.left,
+      .timeline-entry.right {
+        left: 0;
+        text-align: left;
+      }
+
+      .timeline-entry.left::after,
+      .timeline-entry.right::after {
+        left: 0;
+      }
+    }
+
+
+/* About Me Styles */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+.about-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-text {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.about-images-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  flex: 1;
+}
+
+.about-images-grid img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+}
+
+.about-image-single {
+  flex-shrink: 0;
+}
+
+.about-image-single img {
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+}
+
+.card {
+  background-color: #ffdce9;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 35px;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-box {
+    flex-direction: column;
+  }
+
+  .about-text {
+    padding-right: 0;
+  }
+
+  .about-image-single {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #ec84ab;
+      color: #ffffff;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="images/myphoto.jpg" alt="Virginia Borja" style="width: 150px; border-radius: 50%; margin-bottom: 1rem;">
+    <h1>Virginia Borja - Portfolio</h1>
+  </header>
+
+ <nav>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#courses">Courses</a>
+    <a href="#awards">Awards</a>
+    <a href="#about">About Me</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+    <div>
+      <h3>💻 Programming</h3>
+      <p>Python, C, C++, Java, JavaScript, SQL...</p>
+    </div>
+    <div>
+      <h3>🌐 Website Development</h3>
+      <p>HTML, CSS...</p>
+    </div>
+    <div>
+      <h3>📊 Microsoft 365</h3>
+      <p>Word, Excel, PowerPoint, Access...</p>
+    </div>
+    <div>
+      <h3>🏢 Business Administration</h3>
+      <p>Experienced with marketing, management, property rentals, banking operations, and drafting contracts.</p>
+    </div>
+    <div>
+      <h3>📈 Data Analysis & Statistics</h3>
+      <p>Skilled in analyzing data sets, interpreting statistical results, and generating insights.</p>
+    </div>
+    <div>
+      <h3>🎨 Design & Media Creation</h3>
+      <p>Proficient with Canva for graphic and logo design, as well as video editing for digital content creation.</p>
+    </div>
+    <div>
+      <h3>⏳ Time Management</h3>
+      <p>Efficient in balancing priorities and maintaining a structured schedule as an NCAA student-athlete.</p>
+    </div>
+    <div>
+      <h3>🤝 Teamwork & Leadership</h3>
+    <p>Experienced in team collaboration and leading initiatives in athletic, academic, and professional environments.</p>
+    </div>
+    <div>
+      <h3>🧠 Problem-solving</h3>
+    <p>Strong ability to resolve complex issues, optimize processes, and find efficient solutions.</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="experience-item">
+    <h3>🌐 Web Designer & AI Developer | <a href="https://www.pba.edu/" target="_blank">Palm Beach Atlantic University</a></h3>
+    <p>Currently work as a web designer responsible for creating, editing, and maintaining websites on WordPress. I also serve as an artificial intelligence developer by creating and implementing an AI program using Python to improve efficiency and the overall success of the team.</p>
+  </div>
+  <div class="experience-item">
+    <h3>🖥️ Web Developer | <a href="https://virginiaborja.com/webdeveloper" target="_blank">My Website</a></h3>
+    <p>Designed and developed responsive websites for personal portfolios, professional resumes, brands and businesses.</p>
+  </div>
+  <div class="experience-item">
+    <h3>💻 Computer Science Intern | Engajer Ai</h3>
+    <p>Worked with artificial intelligence to support Engajer Ai's website and app. Responsibilities included debugging and deploying code, managing infrastructure with AWS, GitHub, and Render, and using programming languages like Python to improve system functionality and performance.</p>
+  </div>
+  <div class="experience-item">
+    <h3>📈 Business Intern | The Ritz-Carlton Dallas, Las Colinas</h3>
+    <p>Assisted in the administration of Chris Como's business by contributing to brand design (including logo creation), improving the website, managing social media accounts, and editing videos into multiple languages to increase audience reach and engagement.</p>
+  </div>
+  <div class="experience-item">
+    <h3>🏢 Business Administrator | Faraó Empreendimentos LTDA</h3>
+    <p>Managed operations for over 40 properties, increased rentals by 19.5%, analyzed financial data, created reports, drafted contracts, solved banking matters, designed marketing websites, and cultivated strong communication with costumers.</p>
+  </div>
+  <div class="experience-item">
+    <h3>🏓 Pickleball Instructor | Crazzy Goat Arena</h3>
+    <p>Provided high-quality lessons to players of all skill levels, organized tournments for adults and children, and maintained a positive and engaging learning environment.</p>
+  </div>
+  <div class="experience-item">
+    <h3>🎾 Student-Athlete | Palm Beach Atlantic University</h3>
+    <p>Demonstrated strong discipline, leadership, and time management by balancing athletic commitments with academic excellence.</p>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="education-card">
+    <h3>Palm Beach Atlantic University</h3>
+    <p>Currently pursuing a Bachelor of Science in Computer Science with a Minor in Business Administration. I am completing the program in three years while maintaining a perfect 4.0 GPA and competing as an NCAA athlete on the women’s tennis team.</p>
+    <p><strong>Major:</strong> Computer Science</p>
+    <p><strong>Minor:</strong> Business Administration</p>
+    <p><strong>Graduation:</strong> May 2026</p>
+    <p><strong>GPA:</strong> 4.0</p>
+  </div>
+</section>
+
+<section id="courses">
+  <h2>Courses</h2>
+  <div class="timeline">
+    <div class="timeline-entry left">
+      <div class="timeline-content">
+        <h3>Fall 2023</h3>
+        <p>CSC 1003 - Introduction to Computer Science</p>
+        <p>CSC 2603 - Database Systems (Access, SQL)</p>
+        <p>MAT 1853 - College Algebra</p>
+        <p>COM 1113 - Public Speaking</p>
+        <p>FRN 1113 - Elementary French I</p>
+        <p>FYE 1001 - First Year Experience</p>
+        <p>CPL 1000 - Chapel Contemporary</p>
+        <p>WOR 2023 - Workship 2023</p>
+      </div>
+    </div>
+    <div class="timeline-entry right">
+      <div class="timeline-content">
+        <h3>Spring 2024</h3>
+        <p>CSC 2133 - Introduction to Information Systems</p>
+        <p>CSC 2203 - Programming I (Python)</p>
+	<p>MAT 2003 - Elementary Statistics</p>
+        <p>ENG 1113 - English Composition I</p>
+        <p>HUM 1013 - Humanities I</p>
+        <p>HHP 1061 - Lifetime Fitness</p>
+	<p>CPL 1000 - Chapel Contemporary</p>
+        <p>WOR 2023 - Workship 2023</p>
+      </div>
+    </div>
+    <div class="timeline-entry left">
+      <div class="timeline-content">
+        <h3>Fall 2024</h3>
+        <p>CSC 2253 - Discrete Structures</p>
+        <p>CSC 2303 - Programming II (C, C++)</p>
+        <p>PHY 2013 - General Physics I</p>
+        <p>PHY 2111 - Physics I Lab</p>
+        <p>ENG 1123 - English Composition II</p>
+        <p>HUM 1023 - Humanities II</p>
+	<p>CPL 1000 - Chapel Contemporary</p>
+        <p>WOR 2024 - Workship 2024</p>
+      </div>
+    </div>
+    <div class="timeline-entry right">
+      <div class="timeline-content">
+        <h3>Spring 2025</h3>
+        <p>CSC 2403 - Algorithm Design & Analysis</p>
+        <p>CSC 2333 - Website Development (HTML, CSS)</p>
+        <p>BUS 1001 - Business Fundamentals</p>
+        <p>HUM 1033 - Humanities III</p>
+        <p>PLS 3003 - Freedom in American Society</p>
+        <p>BIB 1003 - Exploring the Bible</p>
+        <p>DAN 3002 - Dance Wellness</p>
+	<p>CPL 1000 - Chapel Contemporary</p>
+        <p>WOR 2024 - Workship 2024</p>
+      </div>
+    </div>
+    <div class="timeline-entry left">
+      <div class="timeline-content">
+        <h3>Summer 2025</h3>
+        <p>BUS 4713 - Internship in Business</p>
+        <p>ACG 2013 - Financial Accounting</p>
+        <p>BUM 2183 - Principles of Management</p>
+        <p>ECO 2343 - Principles of Macroeconomics</p>
+        <p>BUS 3613 - Data Analysis</p>
+        <p>THL 4153 - Christian Values and Biblical Faith</p>
+      </div>
+    </div>
+    <div class="timeline-entry right">
+      <div class="timeline-content">
+        <h3>Fall 2025</h3>
+        <p>CSC 4804 - Senior Internship</p>
+        <p>CSC 3003 - Programming III (Java, JavaScript)</p>
+        <p>CSC 3103 - Computer Organization</p>
+        <p>CSC 3703 - Artificial Intelligence</p>
+        <p>CSC 4303 - Mobile Applications Development</p>
+        <p>BUS 2001 - Why Business?</p>
+        <p>BIO 1023 - Intro to Life in the Sea</p>
+        <p>BIO 1021 - Intro to Life in the Sea Lab</p>
+	<p>CPL 1000 - Chapel Contemporary</p>
+        <p>WOR 2025 - Workship 2025</p>
+      </div>
+    </div>
+    <div class="timeline-entry left">
+      <div class="timeline-content">
+        <h3>Spring 2026</h3>
+        <p>CSC 3213 - Software Engineering</p>
+        <p>CSC 3503 - Graphics Programming</p>
+        <p>CSC 4413 - Computer Networking Security</p>
+        <p>BUR 2153 - Principles of Marketing</p>
+        <p>BUS 3001 - Business Professionalism</p>
+        <p>BUI 3633 - Global Business</p>
+	<p>CPL 1000 - Chapel Contemporary</p>
+        <p>WOR 2025 - Workship 2025</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ <section id="awards">
+    <h2>Awards</h2>
+    <ul>
+      <li>IVLA Alumini (4.0 GPA)</li>
+      <li><a href="https://pbasailfish.com/news/2024/1/9/general-athletics-pba-athletics-releases-fall-2023-academic-achievements.aspx">President's List (4.0 GPA) - Fall 2023</a></li>
+      <li><a href="https://pbasailfish.com/news/2024/5/30/baseball-pba-athletics-release-spring-2024-academic-achievements.aspx">President's List (4.0 GPA) - Spring 2024</a></li>
+      <li><a href="https://pbasailfish.com/news/2025/1/14/baseball-pba-athletics-release-fall-2024-academic-achievements.aspx">President's List (4.0 GPA) - Fall 2024</a></li>
+      <li><a href="https://pbasailfish.com/news/2024/6/26/baseball-107-sailfish-student-athletes-named-to-ssc-honor-roll.aspx">SCC Commisioner's Honor Roll</a></li>
+      <li><a href="https://pbasailfish.com/news/2025/6/13/baseball-pba-athletics-releases-spring-2025-academic-achievements.aspx">Provost's List (3.5-3.99 GPA) - Spring 2025</a></li>
+      <li><a href="https://pbasailfish.com/news/2025/5/13/womens-tennis-tennis-earns-csc-academic-all-district-awards.aspx">CSC Academic All-District</a></li>
+      <li><a href="https://www.pba.edu/news/88-student-athletes-earn-d2-ada-academic-achievement-award/?fbclid=PAQ0xDSwNEN0ZleHRuA2FlbQIxMQABpw_fyqcoN-8my0QKjHPXBtT7q3fzG41yHoIeOaFRH06Y4HNwtQb4sXMCTA4T_aem_y7l2E854RlCMwmZf5rV2Ew">ADA Academic Achievement Award</a></li>
+    </ul>
+  </section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>Hello! I hope you’ve enjoyed exploring my portfolio. A little bit more about me — I’m originally from Belo Horizonte, Brazil, and moved to West Palm Beach, Florida to begin my bachelor’s degree at Palm Beach Atlantic University in Fall 2023.</p>
+  <p>I’m passionate about statistics, machine learning, and all things tech, which inspired me to pursue a major in Computer Science. I’ve also grown up around my family’s business, working with property rentals, contracts, and banking operations, which led me to choose Business Administration as my minor.</p>
+  <p>On my free time, you’ll probably find me playing tennis, skiing, traveling, enjoying outdoor activities, getting creative, cooking, hanging out with family and friends, or spending time with animals...</p>
+<br>
+
+  <!-- About Me Grid -->
+  <div class="about-grid">
+    <!-- Tennis -->
+    <div class="card about-box">
+      <div class="about-text">
+        <h3>Tennis</h3>
+        <p>My biggest passion since I was four years old. Today, I represent the Sailfish as a member of PBA’s women’s tennis team!</p>
+      </div>
+      <div class="about-images-grid">
+        <img src="images/tennis1.jpg" alt="Tennis 1">
+        <img src="images/tennis2.jpg" alt="Tennis 2">
+        <img src="images/tennis3.jpg" alt="Tennis 3">
+        <img src="images/tennis4.jpg" alt="Tennis 4">
+      </div>
+    </div>
+
+    <!-- Ski -->
+    <div class="card about-box">
+      <div class="about-text">
+        <h3>Ski</h3>
+        <p>I started skiing when I was four, and my love for it has only grown over the years. Whether I’m skiing on the snow or on the water, I always enjoy it!</p>
+      </div>
+      <div class="about-image-single">
+      <img src="images/ski.jpg" alt="Ski">
+      </div>
+    </div>
+
+    <!-- Travel -->
+    <div class="card about-box">
+      <div class="about-text">
+        <h3>Travel</h3>
+        <p>I love exploring new places, meeting new people, and experiencing different cultures. So far, I’ve had the chance to visit… </p>
+      </div>
+      <div class="about-image-single">
+      <img src="images/travel.jpg" alt="Travel">
+      </div>
+</div>
+
+    <!-- Outdoor Activities -->
+    <div class="card about-box">
+      <div class="about-text">
+        <h3>Outdoor Activities</h3>
+        <p>Whether it’s running, biking, hiking, swimming, or spending time at the beach — I always love being outdoors!</p>
+      </div>
+      <div class="about-image-single">
+      <img src="images/outdoor.jpg" alt="Outdoor Activities">
+      </div>
+    </div>
+
+    <!-- Creativity -->
+    <div class="card about-box">
+      <div class="about-text">
+        <h3>Creativity</h3>
+        <p>I enjoy expressing myself through singing, dancing, painting, designing, and finding fun ways to bring ideas to life!</p>
+      </div>
+      <div class="about-image-single">
+      <img src="images/creative.jpg" alt="Creative">
+      </div>
+    </div>
+
+    <!-- Food -->
+    <div class="card about-box">
+      <div class="about-text">
+        <h3>Food</h3>
+        <p>I love trying different foods, and my favorites are steak, sushi, and pasta. I always try to get creative grilling, cooking, and baking!</p>
+      </div>
+      <div class="about-images-grid">
+        <img src="images/food1.jpg" alt="Food 1">
+        <img src="images/food2.jpg" alt="Food 2">
+        <img src="images/food3.jpg" alt="Food 3">
+        <img src="images/food4.jpg" alt="Food 4">
+      </div>
+    </div>
+
+    <!-- Family & Friends -->
+    <div class="card about-box">
+      <div class="about-text">
+        <h3>Family & Friends</h3>
+        <p>My family and friends are everything to me. Nothing makes me happier than spending time with them!</p>
+      </div>
+      <div class="about-images-grid">
+        <img src="images/family1.jpg" alt="Family 1">
+        <img src="images/family2.jpg" alt="Family 2">
+        <img src="images/family3.jpg" alt="Family 3">
+        <img src="images/family4.jpg" alt="Family 4">
+      </div>
+    </div>
+
+    <!-- Animals -->
+    <div class="card about-box">
+      <div class="about-text">
+        <h3>Animals</h3>
+        <p>I have a huge love for animals, especially dogs. Back home in Brazil, I have two Golden Retrievers and a Maltese who mean the world to me!</p>
+      </div>
+      <div class="about-images-grid">
+        <img src="images/animal1.jpg" alt="Animal 1">
+        <img src="images/animal2.jpg" alt="Animal 2">
+        <img src="images/animal3.jpg" alt="Animal 3">
+        <img src="images/animal4.jpg" alt="Animal 4">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p><strong>Phone:</strong> +1 (954) 552-6762 | +55 (31) 98493-1809</p>
+  <p><strong>Email:</strong> <a href="mailto:viihborja@hotmail.com">viihborja@hotmail.com</a> | <a href="mailto:borjavd@pba.edu">borjavd@pba.edu</a></p>
+  <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/virginia-borja-6930982a6">Virginia Borja</a></p>
+</section>
+
+
+  <footer>
+    <p>&copy; 2025 Virginia Borja. All rights reserved. Designed by: <a href="https://virginiaborja.com/webdeveloper/index-pt.html">Virginia Borja</a></p>
+  </footer>
+
+<script>
+  document.querySelectorAll('a[href^="http"]').forEach(link => {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+</script>
+
+</body>
+</html>
