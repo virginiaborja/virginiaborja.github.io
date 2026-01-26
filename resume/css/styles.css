@@ -1,0 +1,267 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #1f2937;
+}
+
+p {
+  margin: 0.5rem 0;
+  color: #374151;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #60a5fa;
+  text-decoration: underline;
+}
+
+section {
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: auto;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+section h2 {
+  color: #1f2937;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Header */
+header {
+  background-color: #e0e0e0;
+  color: #1f2937;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  color: #1f2937;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #374151;
+  transition: all 0.3s;
+}
+
+
+/* Nav */
+nav {
+  background-color: #374151;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0.5rem 0;
+}
+
+nav a {
+  color: #ffffff;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #60a5fa;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #374151;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 1rem 0;
+    text-align: center;
+    z-index: 1000;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+/* Experience */
+.experience-item {
+  background: #ffffff;
+  padding: 25px;
+  max-width: 700px;
+  margin: 20px auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.experience-item h3 {
+  margin-top: 0;
+  font-size: 22px;
+  color: #1f2937;
+}
+
+.experience-item p {
+  font-size: 16px;
+  color: #374151;
+  margin: 8px 0;
+}
+
+/* Education */
+.education-card {
+  background: #ffffff;
+  padding: 25px;
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  margin: 2rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #e5e7eb;
+  transform: translateX(-50%);
+}
+
+.timeline-entry {
+  position: relative;
+  width: 50%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.timeline-entry.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-entry.right {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-content {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  position: relative;
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  font-size: 1.25rem;
+  color: #1f2937;
+}
+
+.timeline-entry::after {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border: 3px solid #374151;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-entry.left::after {
+  right: -10px;
+}
+
+.timeline-entry.right::after {
+  left: -10px;
+}
+
+/* Responsive Timeline */
+@media screen and (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-entry {
+    width: 100%;
+    padding-left: 3rem;
+    padding-right: 1rem;
+  }
+
+  .timeline-entry.left,
+  .timeline-entry.right {
+    left: 0;
+    text-align: left;
+  }
+
+  .timeline-entry.left::after,
+  .timeline-entry.right::after {
+    left: 0;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #e0e0e0;
+  color: #1f2937;
+}
+
+
