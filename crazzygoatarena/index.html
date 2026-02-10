@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crazzy Goat Arena</title>
+
+  <!-- Font and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --lilas: #c77dff;
+      --lilas-claro: #e0aaff;
+      --preto: #000;
+      --cinza-escuro: #111;
+      --branco: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--preto);
+      color: var(--lilas-claro);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--lilas);
+    }
+
+    .logo-space {
+      height: 60px;      
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-space img {
+      height: 60px; 
+      width: auto;  
+    }
+
+    nav a {
+      color: var(--lilas-claro);
+      margin-left: 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--lilas);
+      transition: width 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--lilas);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      height: 95vh;
+      background: url('images/fundo.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      animation: fadeIn 1.5s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      color: var(--lilas);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--branco);
+    }
+
+    section {
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: var(--lilas);
+      font-weight: 700;
+    }
+
+    /* SOBRE NÓS */
+    .sobre-nos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .sobre-nos img {
+      width: 450px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(199, 125, 255, 0.2);
+      transition: transform 0.4s;
+    }
+
+    .sobre-nos img:hover {
+      transform: scale(1.05);
+    }
+
+    .sobre-nos-text {
+      max-width: 500px;
+      text-align: left;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--lilas-claro);
+    }
+
+    /* OFERECEMOS */
+    .oferecemos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .box {
+      background: var(--cinza-escuro);
+      border: 2px solid var(--lilas);
+      border-radius: 15px;
+      padding: 2rem;
+      width: 280px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 15px rgba(199, 125, 255, 0.15);
+    }
+
+    .box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px rgba(199, 125, 255, 0.3);
+    }
+
+    .box h3 {
+      color: var(--lilas);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    /* CONTATO */
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      margin: 0 auto;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.8rem;
+      border: 1px solid var(--lilas);
+      border-radius: 5px;
+      background: #1a1a1a;
+      color: var(--branco);
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--lilas-claro);
+    }
+
+    button {
+      background: var(--lilas);
+      border: none;
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--preto);
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-transform: uppercase;
+    }
+
+    button:hover {
+      background: var(--lilas-claro);
+      transform: scale(1.05);
+    }
+
+    /* SOCIAL LINKS */
+    .social-links {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .social-links a {
+      color: var(--lilas);
+      font-size: 1.8rem;
+      text-decoration: none;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.2);
+      color: var(--lilas-claro);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #0a0a0a;
+      color: var(--lilas-claro);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--lilas);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo-space">
+    <img src="images/logo.jpg" alt="Crazzy Goat Arena Logo">
+  </div>
+  <nav>
+    <a href="#sobre">Sobre Nós</a>
+    <a href="#oferecemos">Oferecemos</a>
+    <a href="#oferecemos">Horários e Local</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Crazzy Goat Arena</h1>
+      <p>Venha jogar pickleball conosco em Lagoa Santa!</p>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <h2>Sobre Nós</h2>
+    <div class="sobre-nos">
+      <img src="images/sobre.jpg" alt="Arena de pickleball">
+      <div class="sobre-nos-text">
+        <p><strong>Crazzy Goat Arena</strong> é a primeira arena dedicada exclusivamente ao <strong>Pickleball</strong> em Lagoa Santa, localizada na orla da lagoa, acima do restaurante Giro. 
+<br><br>
+Nossa estrutura conta com quadras modernas de alto padrão, <strong>aulas para todos os níveis</strong> — do iniciante ao avançado — e um ambiente descontraído perfeito para eventos, torneios e confraternizações.  
+<br><br>
+Na Crazzy Goat Arena, o esporte vai além do jogo: é energia, diversão e conexão entre pessoas que compartilham a mesma paixão.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="oferecemos">
+    <h2>Oferecemos</h2>
+    <div class="oferecemos">
+      <div class="box">
+        <h3>Quadras para Locação</h3>
+        <p>Reserve e jogue em quadras com iluminação e estrutura de ponta.</p>
+      </div>
+      <div class="box">
+        <h3>Aulas de <br> Pickleball</h3>
+        <p>Aprenda com os melhores! Treinos para iniciantes e avançados.</p>
+      </div>
+      <div class="box">
+        <h3>Espaço para Eventos</h3>
+        <p>Organize seu evento ou confraternização em um ambiente esportivo.</p>
+      </div>
+    </div>
+  </section>
+
+<section id="local">
+  <h2>Horários e Local</h2>
+  <div class="local-info">
+    <div class="local-text">
+      <p><i class="fas fa-clock"></i> <strong>Horários de Funcionamento:</strong><br><br>
+      Segunda a Sexta: 7h às 22h<br>
+      Sábado e Domingo: 8h às 23h</p>
+      <br><br>
+
+      <p><i class="fas fa-map-marker-alt"></i> <strong>Endereço:</strong><br><br>
+      Av. Getúlio Vargas, 1280<br>
+      Centro, Lagoa Santa - MG, 33400-000<br>
+      Orla de lagoa, acima do restaurante Giro</p>
+      <br><br>
+    </div>
+
+    <div class="local-map">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3757.811555593503!2d-43.897482!3d-19.635352599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa67d4c142a4ac3%3A0x1e42d2cba1ea5f74!2sCrazzy%20Goat%20Arena!5e0!3m2!1spt-BR!2sbr!4v1763520175508!5m2!1spt-BR!2sbr" 
+        width="100%" 
+        height="300" 
+        style="border:0; border-radius:15px; box-shadow:0 0 20px rgba(199, 125, 255, 0.2);" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+    </div>
+  </div>
+</section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <form action="mailto:seuemail@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/crazzygoatarena/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:cgoatarena@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://wa.me/5531998726645" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Crazzy Goat Arena — Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
