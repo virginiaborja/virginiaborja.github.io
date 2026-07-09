@@ -1,4 +1,4 @@
-# virginiaborja.github.io 👋
+# virginiaborja.github.io
 
 My personal website, hosted on **GitHub Pages** — a hub for my resume, portfolio, and web-development services.
 
